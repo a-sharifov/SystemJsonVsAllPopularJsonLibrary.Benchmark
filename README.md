@@ -1,12 +1,9 @@
 # C# JSON Serialization Libraries Comparison
 
-  <a href="#bulb-about">SystemTextJson</a> &nbsp;&bull;&nbsp;
-  <a href="#classical_building-the-solution-architecture">NewtonsoftJson</a> &nbsp;&bull;&nbsp;
-  <a href="#mag_right-research">Utf8Json</a> &nbsp;&bull;&nbsp;
-  <a href="#computer-running">SpanJson</a> 
-
-
-  <br/>
+[**SystemTextJson**](#SystemTextJson) &nbsp;&bull;&nbsp;
+[**NewtonsoftJson**](#NewtonsoftJson) &nbsp;&bull;&nbsp;
+[**Utf8Json**](#Utf8Json) &nbsp;&bull;&nbsp;
+[**SpanJson**](#SpanJson)
 
 This repository aims to compare the performance of popular JSON serialization libraries in the C# ecosystem. I evaluate each library's serialization and deserialization capabilities, providing insights and recommendations based on my findings.
 
