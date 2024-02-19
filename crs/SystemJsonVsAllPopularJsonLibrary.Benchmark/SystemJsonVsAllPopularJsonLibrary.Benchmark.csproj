@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SpanJson" Version="4.0.1" />
+    <PackageReference Include="Utf8Json" Version="1.3.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="BenchmarkDotNet.Attributes;" />
+    <Using Include="SystemJsonVsAllPopularJsonLibrary.Benchmark.ManualConfigs" />
+    <Using Include="SystemJsonVsAllPopularJsonLibrary.Benchmark.Models" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\Users.Json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
