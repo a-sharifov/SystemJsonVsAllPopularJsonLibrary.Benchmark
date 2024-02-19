@@ -29,6 +29,8 @@ I conduct performance tests to measure both the serialization and deserializatio
 
 Based on my performance analysis, I provide insights into the strengths and weaknesses of each library and offer recommendations for different use cases.
 
----
+## 📫 Contact
 
-Feel free to contribute your findings or suggest improvements to my evaluation process!
+If you have any questions or suggestions, feel free to reach out to me.
+
+This project is licensed under the [MIT License](LICENSE).
