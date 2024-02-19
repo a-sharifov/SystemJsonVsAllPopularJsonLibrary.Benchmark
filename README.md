@@ -14,6 +14,19 @@ I conduct performance tests to measure both the serialization and deserializatio
 - **Serialization Performance**: Comparison of serialization times and memory consumption across libraries.
 - **Deserialization Performance**: Evaluation of deserialization speeds and memory footprint.
 
+## System Configuration
+
+- CPU: Intel Core i5-6300HQ 2.3 Ghz
+- RAM: 16GB DDR4 2800 Mhz
+- Graphics: Intel HD Graphics 530
+
+## Libraries Used
+
+- [**SystemTextJson**](#SystemTextJson): Version 8.0.1
+- [**NewtonsoftJson**](#NewtonsoftJson): Version 13.0.3
+- [**Utf8Json**](#Utf8Json): Version 4.0.1
+- [**SpanJson**](#SpanJson): Version 1.3.7 
+
 ## Findings
 
 ### Serialization
