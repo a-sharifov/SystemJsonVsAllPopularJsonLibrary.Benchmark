@@ -1,5 +1,13 @@
 # C# JSON Serialization Libraries Comparison
 
+  <a href="#bulb-about">SystemTextJson</a> &nbsp;&bull;&nbsp;
+  <a href="#classical_building-the-solution-architecture">NewtonsoftJson</a> &nbsp;&bull;&nbsp;
+  <a href="#mag_right-research">Utf8Json</a> &nbsp;&bull;&nbsp;
+  <a href="#computer-running">SpanJson</a> 
+
+
+  <br/>
+
 This repository aims to compare the performance of popular JSON serialization libraries in the C# ecosystem. I evaluate each library's serialization and deserialization capabilities, providing insights and recommendations based on my findings.
 
 ## Performance Metrics
@@ -13,22 +21,27 @@ I conduct performance tests to measure both the serialization and deserializatio
 
 ### Serialization
 
-- **System.Text.Json**: [Results]
-- **NewtonsoftJson**: [Results]
-- **Utf8Json**: [Results]
-- **SpanJson**: [Results]
+| Method                | Mean     | Error   | StdDev   | Gen0    | Gen1    | Gen2    | Allocated |
+|---------------------- |---------:|--------:|---------:|--------:|--------:|--------:|----------:|
+| SystemTextJson        | 326.2 us | 6.83 us | 20.15 us | 33.2031 | 33.2031 | 33.2031 | 104.33 KB |
+| NewtonsoftJsonLibrary | 508.3 us | 7.97 us |  7.45 us | 66.4063 | 33.2031 | 33.2031 | 218.49 KB |
+| Utf8JsonLibrary       | 111.3 us | 2.18 us |  2.83 us | 16.6016 |       - |       - |  51.99 KB |
+| SpanJsonLibrary       | 230.9 us | 6.42 us | 18.92 us | 33.2031 | 33.2031 | 33.2031 | 103.97 KB |
 
 ### Deserialization
 
-- **System.Text.Json**: [Results]
-- **NewtonsoftJson**: [Results]
-- **Utf8Json**: [Results]
-- **SpanJson**: [Results]
-  
+| Method                | Mean     | Error    | StdDev   | Gen0    | Gen1    | Allocated |
+|---------------------- |---------:|---------:|---------:|--------:|--------:|----------:|
+| SystemTextJson        | 500.9 us | 11.53 us | 33.99 us | 41.0156 |       - | 127.99 KB |
+| NewtonsoftJsonLibrary | 657.6 us | 13.06 us | 24.85 us | 41.9922 |       - | 130.84 KB |
+| Utf8JsonLibrary       | 385.8 us |  7.65 us | 17.27 us | 61.5234 | 19.0430 | 202.17 KB |
+| SpanJsonLibrary       | 256.6 us |  3.36 us |  2.98 us | 41.5039 |       - | 127.56 KB |
+
 ## Insights & Recommendations
 
 Based on my performance analysis, I provide insights into the strengths and weaknesses of each library and offer recommendations for different use cases.
 
+---
 ### System.Text.Json
 
 #### Strengths:
@@ -44,6 +57,7 @@ Based on my performance analysis, I provide insights into the strengths and weak
 - Suitable for projects where ease of use and standardization within the .NET ecosystem are prioritized over maximum performance.
 - If speed is a critical factor and flexibility is needed, consider alternatives from the list.
 
+---
 ### NewtonsoftJson
 
 #### Strengths:
@@ -60,6 +74,7 @@ Based on my performance analysis, I provide insights into the strengths and weak
 - Not ideal for memory-sensitive or performance-critical applications where speed and memory efficiency are top priorities.
 - Despite performance considerations, it remains an excellent library worth exploring due to its extensive feature set and community support.
 
+---
 ### Utf8Json
 
 #### Strengths:
@@ -70,12 +85,14 @@ Based on my performance analysis, I provide insights into the strengths and weak
 #### Weaknesses:
 - Limited flexibility compared to more feature-rich libraries.
 - Serialization exclusively in UTF-8 format may not be optimal for all use cases, especially in multi-encoding environments.
+- more allocation. If you critical memory dont used this library
 
 #### Recommendations:
 - Ideal for high-performance applications where speed is of utmost importance and UTF-8 encoding is sufficient.
 - Not recommended for projects requiring extensive customization or support for multiple encoding formats.
 - Consider Utf8Json for scenarios where speed and UTF-8 compatibility are key requirements, but explore other options for broader feature sets and encoding support.
 
+---
 ### SpanJson
 
 #### Strengths:
@@ -92,6 +109,7 @@ Based on my performance analysis, I provide insights into the strengths and weak
 - Recommended for scenarios where speed and minimal memory footprint are critical, such as high-throughput systems or resource-constrained environments.
 - Not suitable for projects requiring extensive customization or broad feature support.
 - Consider SpanJson for specialized use cases where speed is paramount, but explore other options for more comprehensive functionality and flexibility.
+---
 
 ## 📫 Contact
 
